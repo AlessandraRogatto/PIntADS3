@@ -1,0 +1,37 @@
+create DATABASE PIntegral CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+USE PIntegral;
+
+create table agendamento(
+	id int(10) primary key auto_increment,
+    consulta varchar(255) not null,
+    dataConsulta date not null,
+    hora time not null,
+    medico varchar (255) not null,
+    paciente varchar (255),
+    sexo enum('F','M') not null
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+INSERT INTO agendamento (consulta, dataConsulta, hora, medico, paciente, sexo) VALUES
+('Consulta de Rotina', '2025-04-01', '09:00:00', 'Dr. João Silva', 'Carlos Souza', 'M'),
+('Consulta de Rotina', '2025-04-01', '09:30:00', 'Dr. João Silva', 'Maria Oliveira', 'F'),
+('Consulta de Dermatologia', '2025-04-01', '10:00:00', 'Dra. Ana Costa', 'Pedro Santos', 'M'),
+('Consulta de Dermatologia', '2025-04-01', '10:30:00', 'Dra. Ana Costa', 'Laura Pereira', 'F'),
+('Consulta de Ginecologia', '2025-04-02', '14:00:00', 'Dr. Eduardo Martins', 'Juliana Alves', 'F'),
+('Consulta de Ginecologia', '2025-04-02', '14:30:00', 'Dr. Eduardo Martins', 'Fernanda Rocha', 'F'),
+('Consulta de Neurologia', '2025-04-02', '15:00:00', 'Dr. Marcelo Lima', 'Ricardo Costa', 'M'),
+('Consulta de Neurologia', '2025-04-02', '15:30:00', 'Dr. Marcelo Lima', 'Beatriz Souza', 'F'),
+('Consulta de Oftalmologia', '2025-04-03', '10:00:00', 'Dra. Clara Silva', 'Patricia Gomes', 'F'),
+('Consulta de Oftalmologia', '2025-04-03', '10:30:00', 'Dra. Clara Silva', 'Luís Santos', 'M'),
+('Consulta de Cardiologia', '2025-04-03', '11:00:00', 'Dr. Felipe Souza', 'Carlos Santos', 'M'),
+('Consulta de Cardiologia', '2025-04-03', '11:30:00', 'Dr. Felipe Souza', 'Ana Lima', 'F'),
+('Consulta de Psicologia', '2025-04-04', '13:00:00', 'Dra. Helena Martins', 'José Almeida', 'M'),
+('Consulta de Psicologia', '2025-04-04', '13:30:00', 'Dra. Helena Martins', 'Mariana Silva', 'F'),
+('Consulta de Endocrinologia', '2025-04-04', '16:00:00', 'Dr. Roberto Lima', 'Cláudia Souza', 'F');
+
+create table consulta(
+    id int auto_increment primary key,
+    especialidade varchar(100)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+

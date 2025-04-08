@@ -2,7 +2,7 @@
 $host = 'localhost'; // substitua pelo nome correto do host, aqui foi usado o nome do container docker
 $dbname = 'PIntegral'; // substitua pelo nome correto do banco
 $user = 'root';                // ajuste conforme seu ambiente
-$pass = 'V3t3ran0*';                    // ajuste conforme seu ambiente
+$pass = '';                    // ajuste conforme seu ambiente
 
 // Função para criar conexão PDO
 function conectarPDO($host, $user, $pass, $dbname = null) {
